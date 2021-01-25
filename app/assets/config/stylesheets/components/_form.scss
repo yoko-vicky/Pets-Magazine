@@ -1,0 +1,88 @@
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+
+form {
+  @include content_width;
+
+  .btn {
+    margin: 1rem auto;
+  }
+}
+
+input,
+button,
+textarea {
+  display: block;
+  padding: 2rem;
+  width: 100%;
+}
+
+select {
+  width: 100%;
+  border: 2px solid $light-grey;
+  background-color: $white;
+  padding: 1rem;
+  border-radius: 3px;
+}
+
+input[type="file"] {
+  padding: 1rem 0 0 0;
+}
+
+input[type="text"],
+textarea {
+  border: 2px solid $light-grey;
+  border-radius: 3px;
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+.field {
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+// CHECKBOX STYLE
+.checkbox-field {
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  label {
+    position: relative;
+    display: inline-block;
+    padding: 3px 3px 3px 22px;
+    cursor: pointer;
+  }
+
+  label::before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    margin-top: -8px;
+    background: $white;
+    border: 1px solid $light-grey;
+  }
+
+  input[type="checkbox"]:checked + label::after {
+    position: absolute;
+    content: '';
+    top: 10px;
+    left: 3px;
+    width: 13px;
+    height: 5px;
+    border-left: 2px solid $orange;
+    border-bottom: 2px solid $orange;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}

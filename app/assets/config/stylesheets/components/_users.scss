@@ -1,0 +1,15 @@
+@import "./abstracts/variables";
+
+.users {
+  text-align: center;
+
+  &__item {
+    margin-bottom: 1rem;
+
+    a {
+      color: $brown;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+
+.messages {
+  @include content_width;
+
+  &__item {
+    padding: 2rem;
+    max-width: 60rem;
+    margin: 0 auto 2rem;
+    border-radius: 3px;
+    font-size: 1.8rem;
+    color: $white;
+    text-align: center;
+
+    &.notice {
+      background: rgba($light-orange, 0.8);
+    }
+
+    &.alert {
+      background: rgba($orange, 0.6);
+    }
+  }
+}
+
+.errors {
+  padding: 2rem;
+  max-width: 60rem;
+  margin: 0 auto 2rem;
+  border-radius: 3px;
+  font-size: 1.8rem;
+  background: rgba($red, 0.6);
+  color: $white;
+}

@@ -1,0 +1,149 @@
+@import "./abstracts/variables";
+
+.footer {
+  width: 100%;
+  background-color: $brown;
+  margin: 5rem auto 0;
+
+  &__container {
+    max-width: $content-max-width;
+    width: 100%;
+    margin: 0 auto;
+    padding: 4rem 0;
+    display: block;
+    text-align: center;
+
+    @include mq(laptap) {
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      text-align: left;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    color: $white;
+    font-size: 3.4rem;
+    margin-bottom: 1rem;
+
+    @include mq(laptap) {
+      font-size: 2.6rem;
+      margin-bottom: 0;
+      display: inline;
+    }
+  }
+
+  &__content {
+    font-size: 1.4rem;
+
+    @include mq(laptap) {
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__list {
+    @include mq(laptap) {
+      display: flex;
+      margin-right: 1rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    // border: 1px solid $white;
+
+    @include mq(laptap) {
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__link {
+    color: $orange;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+
+    @include mq(laptap) {
+      padding: 0;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__copy {
+    color: $white;
+    padding: 1rem;
+    margin-top: 1rem;
+
+    @include mq(laptap) {
+      padding: 0;
+      margin-top: 0;
+    }
+  }
+
+  &__sns {
+    color: $white;
+    text-align: center;
+
+    @include mq(laptap) {
+      display: flex;
+      align-items: center;
+      text-align: left;
+    }
+
+    &__note {
+      display: block;
+      margin: 1.4rem 0;
+      font-size: 1.3rem;
+
+      @include mq(laptap) {
+        display: inline;
+        margin-right: 1rem;
+      }
+    }
+
+    &__links {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $orange;
+      color: $brown;
+      border: 1px solid;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+
+      i {
+        font-size: 1.8rem;
+      }
+
+      @include mq(laptap) {
+        width: 5rem;
+        height: 5rem;
+
+        &:not(:last-child) {
+          margin-right: 0.5rem;
+        }
+
+        i {
+          font-size: 2.6rem;
+        }
+      }
+    }
+  }
+}

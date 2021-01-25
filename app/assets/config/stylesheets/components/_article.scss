@@ -1,0 +1,36 @@
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+
+.article {
+  text-align: center;
+
+  @include content_width;
+
+  &__text {
+    text-align: left;
+    margin: 3rem auto 0;
+  }
+
+  &__category {
+    color: $light-orange;
+    font-weight: bold;
+    font-family: $font-family-deco;
+    padding-bottom: 1rem;
+
+    span {
+      border-bottom: 2px solid;
+    }
+  }
+
+  &__date {
+    color: $grey;
+    font-style: italic;
+  }
+
+  &__author {
+    a {
+      color: $black;
+      text-decoration: underline;
+    }
+  }
+}
