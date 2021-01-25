@@ -1,0 +1,58 @@
+@import "./abstracts/variables";
+
+.oneline-message {
+  text-align: center;
+
+  &__text {
+    font-size: 3rem;
+    color: $grey;
+  }
+
+  &__image {
+    margin: 3rem auto 0;
+    border-radius: 3px;
+  }
+}
+
+.btns {
+  margin: 2rem auto;
+}
+
+.btn {
+  display: inline-block;
+  background-color: $grey;
+  border-radius: 3px;
+  padding: 1rem;
+  margin: 1rem 0.5rem;
+  color: $white;
+
+  &-info {
+    background-color: $light-orange;
+  }
+
+  &-danger {
+    background-color: $black;
+  }
+
+  &-atten {
+    background-color: $red;
+  }
+
+  &-standout {
+    background-color: $orange;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.note {
+  color: $grey;
+
+  a {
+    color: $grey;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}

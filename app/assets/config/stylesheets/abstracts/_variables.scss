@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&display=swap');
+
+// COLORS
+$white: #fff;
+$black: #2a2a2a;
+$brown: #4e443f;
+$yellow: #fffc1e;
+$light-orange: #faa31b;
+$orange: #f86000;
+$red: #e9062f;
+$grey: #847f7b;
+$light-grey: rgba($grey, 0.3);
+
+// WIDTHS/HEIGHTS
+$max-mob-width: 94%;
+$content-max-width: 140rem;
+$head-mob-height: 5.4rem;
+$head-pc-height: 7.8rem;
+
+// FONTS
+$font-family:'Lato', sans-serif;
+$font-family-deco: 'Merriweather Sans', sans-serif;
+
+// MEDIA QUERY
+// 1em = 16px;
+@mixin mq($breakpoint) {
+  @if $breakpoint==mob {
+    // 420px
+    @media only screen and (min-width: 26.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==midmob {
+    // 480px
+    @media only screen and (min-width: 30em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tab {
+    // 768px
+    @media only screen and (min-width: 48em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==laptap {
+    // 1000px
+    @media only screen and (min-width: 62.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==lg {
+    // 1200px
+    @media only screen and (min-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==splg {
+    // 1600px
+    @media only screen and (min-width: 100em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==xs {
+    @media only screen and (max-width: 375px) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "./abstracts/variables";
+
+@mixin content_width {
+  width: $max-mob-width;
+  max-width: 60rem;
+  margin: 0 auto;
+
+  @include mq(tab) {
+    width: 100%;
+  }
+}

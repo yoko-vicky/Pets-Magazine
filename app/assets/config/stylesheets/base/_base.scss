@@ -1,0 +1,107 @@
+@import "./abstracts/variables";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-family;
+  letter-spacing: 0.5px;
+  font-size: 1.6rem;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo {
+  font-family: $font-family-deco;
+  color: $brown;
+  line-height: 1.3;
+}
+
+h1 {
+  padding-top: 3rem;
+  text-align: center;
+  font-size: 3rem;
+
+  @include mq(laptap) {
+    font-size: 4rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.4s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+input,
+button,
+textarea {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.logo {
+  i {
+    transform: rotate(-15deg);
+    color: $orange;
+    font-size: 50%;
+  }
+}
+
+.profiler-results {
+  display: none !important;
+}
+
+.upcase {
+  text-transform: uppercase;
+}
+
+.container {
+  width: 100%;
+  max-width: $content-max-width;
+  margin: $head-mob-height auto 0;
+  background-color: $white;
+
+  @include mq(laptap) {
+    margin: $head-pc-height auto 0;
+    min-height: 100vh;
+  }
+}

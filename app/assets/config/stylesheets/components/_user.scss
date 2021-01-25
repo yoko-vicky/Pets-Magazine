@@ -1,0 +1,15 @@
+@import "./abstracts/variables";
+
+.my-settings {
+  text-align: center;
+  padding: 3rem 0;
+  margin: 3rem auto;
+  background-color: rgba($light-orange, 0.1);
+
+  &__title {
+    font-weight: bold;
+    font-family: $font-family-deco;
+    font-size: 3rem;
+    color: $brown;
+  }
+}
