@@ -1,0 +1,24 @@
+<% if most_popular_article %>
+<div class="featured">
+  <figure class="featured__images">
+  <% if most_popular_article.image.exists? %>
+      <%= image_tag most_popular_article.image.url, class: "featured__image"  %>
+    <% else %>
+      <%= image_tag 'no_img', class: "featured__image"  %>
+  <% end %>
+  </figure>
+  <div class="featured__texts">
+    <h1 class="featured__title">
+      <%= link_to most_popular_article.title, article_path(most_popular_article) %>
+    </h1>
+    <div class="featured__content">
+      <div class="featured__excerpt"><%= excerpt_short(most_popular_article.text) %></div>
+      <div class="featured__attr">
+        <div class="featured__author">Posted by <%= link_to most_popular_article.author.name, user_path(most_popular_article.author) %></div><div class="featured__date">&mdash; Posted <%= distance_time(most_popular_article.created_at) %> ago</div>
+      </div>
+    </div>
+  </div>
+</div>
+<% else %>
+<%= render  "shared/notfound" %>
+<% end %>

@@ -1,0 +1,26 @@
+<%= render  "shared/errors", obj: article %>
+<%= form_with model: article, multipart: true do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :text %>
+    <%= f.text_area :text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category_id, "Select Category" %>
+    <%= f.collection_select :category_id, Category.order(:priority), :id, :name, include_blank: true %>
+  </div>
+
+  <div class="field">
+    <% if @article.image.exists? %>
+      <%= image_tag @article.image.url(:thumb) %><br/>
+    <% end %>
+    <%= f.label :image, "Attach a New Image" %><br />
+    <%= f.file_field :image %>
+  </div>
+
+  <%= f.submit class: "btn btn-info" %>
+<% end %>

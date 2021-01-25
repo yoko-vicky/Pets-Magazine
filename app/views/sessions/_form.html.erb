@@ -1,0 +1,8 @@
+<%# later, add errors %>
+<%= form_with scope: :session, url: login_path, local: true do |f| %>
+  <div class="field">
+    <%= f.label :name, "Enter your name" %>
+    <%= f.text_field :name %>
+  </div>
+  <%= f.submit 'Login', class: "btn btn-info" %>
+<% end %>

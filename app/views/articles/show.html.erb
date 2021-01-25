@@ -1,0 +1,24 @@
+<div class="article">
+  <% if @article.image.exists? %>
+    <%= image_tag @article.image.url, class: "article__thumb"  %>
+  <% end %>
+
+  <h1 class="article__title"><%= @article.title %></h1>
+  <div class="article__category">
+    <span><%= @article.category ? @article.category.name : "No category" %></span>
+  </div>
+
+  <div class="article__author">Posted by <%= link_to  @article.author.name, user_path(@article.author) %></div>
+  <div class="article__date">&mdash; Posted <%= distance_time(@article.created_at) %> ago</div>
+
+  <div class="article__text">
+    <%= @article.text %>
+  </div>
+
+  <% if current_user == @article.author %>
+    <div class="btns">
+      <%= link_to  "Edit", edit_article_path(@article), class: "btn btn-info" %>
+      <%= link_to  "Delete", article_path(@article), method: :delete, data: {confirm: 'Are you sure?'} ,class: "btn btn-danger" %>
+    </div>
+  <% end %>
+</div>

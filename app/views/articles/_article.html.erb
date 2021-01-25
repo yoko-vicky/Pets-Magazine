@@ -1,0 +1,37 @@
+<article class="articles__item">
+
+  <div class="articles__images">
+    <% if article.image.exists? %>
+      <%= image_tag article.image.url, class: "articles__image"  %>
+    <% else %>
+      <%= image_tag 'no_img', class: "articles__image"  %>
+    <% end %>
+  </div>
+
+  <div class="articles__texts">
+    <div class="articles__category">
+        <span><%= link_to article.category.name, category_path(article.category) %></span>
+    </div>
+    <h2 class="articles__title"><%= article.title %></h2>
+    <div class="articles__author">Posted by <%= link_to article.author.name, user_path(article.author), class: "articles__author__link" %></div>
+    <div class="articles__date">&mdash; Posted <%= distance_time(article.created_at) %> ago</div>
+    <div class="articles__excerpt">
+      <%= excerpt(article.text) %>
+    </div>
+    <%= link_to 'Read more', article_path(article), class: "articles__readmore" %>
+  </div>
+
+  <div class="articles__vote">
+    <% if login? && current_user.already_voted?(article.id) %>
+      <%= link_to  article_vote_path(article_id: article.id, id: find_vote_id(article.id)), method: :delete, class: "articles__star" do %>
+        <%= icon('fas', 'star') %>
+      <% end %>
+    <% else %>
+      <%= link_to  article_votes_path(article), method: :create, class:"articles__star" do %>
+        <%= icon('far', 'star') %>
+      <% end %>
+    <% end %>
+    <span class="articles__star__num"><%= votes_size(article.id)  %></span>
+  </div>
+
+</article>

@@ -1,0 +1,22 @@
+<footer class="footer">
+  <div class="footer__container">
+    <%= link_to root_path, class: "footer__logo logo" do %>peTs sTyLe <%= icon('fas', 'paw') %><% end %>
+    <div class="footer__content">
+      <% if categories.any? %>
+        <ul class="footer__list">
+            <li class="footer__item"><%= link_to "Privacy Policy", '#', class: "footer__link" %></li>
+            <li class="footer__item"><%= link_to "Terms & Conditions", '#', class: "footer__link" %></li>
+        </ul>
+      <% end %>
+      <div class="footer__copy">Copyright <%= this_year %>. All rights reserved.</div>
+    </div>
+    <div class="footer__sns">
+      <span class="footer__sns__note">Connect with us :</span>
+      <div class="footer__sns__links">
+        <%= link_to "#", class:'footer__sns__link' do %><%= icon('fab', 'twitter') %><% end %>
+        <%= link_to "#", class:'footer__sns__link' do %><%= icon('fab', 'instagram') %><% end %>
+        <%= link_to "#", class:'footer__sns__link' do %><%= icon('fab', 'facebook-f') %><% end %>
+      </div>
+    </div>
+  </div>
+</footer>

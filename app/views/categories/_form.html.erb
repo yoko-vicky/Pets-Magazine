@@ -1,0 +1,15 @@
+<%= render  "shared/errors", obj: category %>
+<%= form_with model: category do |f| %>
+  <div class="field">
+    <%= f.label :name, "Category Name" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :priority, "Input number from 0 to 9. Small number is more prioritized." %>
+    <%= f.number_field :priority, in: 0..9, step: 1 %>
+  </div>
+
+
+  <%= f.submit class:"btn btn-info" %>
+<% end %>

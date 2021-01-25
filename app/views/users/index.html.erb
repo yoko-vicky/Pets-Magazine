@@ -1,0 +1,6 @@
+<h1>All Users</h1>
+<% if @users.any? %>
+ <div class="users">
+  <%= render partial: 'user', collection: @users %>
+ </div>
+<% end %>

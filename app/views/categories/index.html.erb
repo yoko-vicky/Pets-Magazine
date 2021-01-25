@@ -1,0 +1,6 @@
+<%= render "categories/featured" %>
+<% if @categories.any? %>
+  <div class="categories">
+    <%= render @categories %>
+  </div>
+<% end %>

@@ -1,0 +1,20 @@
+<% if current_user == @user %>
+  <div class="my-settings">
+    <div class="my-settings__title">Account Settings</div>
+      <div class="btns my-settings__btns">
+        <%= link_to  "My favorites", my_favorites_path, class: "btn btn-standout" %>
+        <%= link_to  "Edit Name", edit_user_path(@user), class: "btn btn-info" %>
+        <%= link_to  "Delete My Account", user_path(@user), method: :delete, data: {confirm: 'Are you sure to delete this user?'},class: "btn btn-danger" %>
+      </div>
+  </div>
+<% end %>
+
+<h1><%= @user.name %>'s articles</h1>
+
+<% if @articles.any? %>
+  <div class="articles">
+    <%= render partial: "articles/article", collection: @articles %>
+  </div>
+<% else %>
+  <%= render  "shared/notfound" %>
+<% end %>

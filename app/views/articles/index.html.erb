@@ -1,0 +1,12 @@
+<% if @articles.any? %>
+  <div class="articles">
+    <%= render @articles %>
+  </div>
+
+  <div class="btns">
+    <%= link_to  "Create a new article", new_article_path, class: "btn btn-info" %>
+  </div>
+
+<% else %>
+  <%= render  "shared/notfound" %>
+<% end %>

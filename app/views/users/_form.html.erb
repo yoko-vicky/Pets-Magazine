@@ -1,0 +1,8 @@
+<%= render  "shared/errors", obj: user %>
+<%= form_with model: user do |f| %>
+  <div class="field">
+    <%= f.label :name, "Enter your name" %>
+    <%= f.text_field :name %>
+  </div>
+  <%= f.submit class:"btn btn-info" %>
+<% end %>
