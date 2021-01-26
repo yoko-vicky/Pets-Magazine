@@ -4,7 +4,7 @@
   <% if most_popular_article.image.exists? %>
       <%= image_tag most_popular_article.image.url, class: "featured__image"  %>
     <% else %>
-      <%= image_tag 'no_img', class: "featured__image"  %>
+      <%= image_tag 'no_img.jpg', class: "featured__image"  %>
   <% end %>
   </figure>
   <div class="featured__texts">
