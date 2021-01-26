@@ -1,11 +1,7 @@
 <article class="articles__item">
 
   <div class="articles__images">
-    <% if article.image.exists? %>
-      <%= image_tag article.image.url, class: "articles__image"  %>
-    <% else %>
-      <%= image_tag 'no_img.jpg', class: "articles__image"  %>
-    <% end %>
+    <%= image_tag articles_image(article), class: "articles__image"  %>
   </div>
 
   <div class="articles__texts">
@@ -23,15 +19,14 @@
 
   <div class="articles__vote">
     <% if login? && current_user.already_voted?(article.id) %>
-      <%= link_to  article_vote_path(article_id: article.id, id: find_vote_id(article.id)), method: :delete, class: "articles__star" do %>
+      <%= link_to article_vote_path(article_id: article.id, id: find_vote_id(article.id)), method: :delete, class: "articles__star" do %>
         <%= icon('fas', 'star') %>
       <% end %>
     <% else %>
-      <%= link_to  article_votes_path(article), method: :create, class:"articles__star" do %>
+      <%= link_to article_votes_path(article), method: :create, class:"articles__star" do %>
         <%= icon('far', 'star') %>
       <% end %>
     <% end %>
     <span class="articles__star__num"><%= votes_size(article.id)  %></span>
   </div>
-
 </article>

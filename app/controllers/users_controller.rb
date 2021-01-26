@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @articles = @user.ordered_articles
+    @articles = @user.ordered_articles.includes(%i[category author])
   end
 
   def new
