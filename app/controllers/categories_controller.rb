@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @articles = @category.articles.order_by_created
+    @articles = @category.articles.order_by_created.includes(:author)
   end
 
   def new
