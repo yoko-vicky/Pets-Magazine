@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show]
 
   def index
-    @categories = Category.prioritize
+    @categories = Category.includes(:articles).prioritize
   end
 
   def show

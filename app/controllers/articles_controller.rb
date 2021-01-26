@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.order_by_created.includes(:author).latest16
+    @articles = Article.includes(%i[category author]).order_by_created.latest16
   end
 
   def favorites
