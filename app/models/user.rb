@@ -7,10 +7,10 @@ class User < ApplicationRecord
                    uniqueness: true, format: { with: REGEX_FOR_NAME, message: msg }
 
   def already_voted?(article_id)
-    votes.find_by(article_id: article_id)
+    votes.includes(%i[user article]).find_by(article_id: article_id)
   end
 
   def ordered_articles
-    articles.order_by_created
+    articles.includes(%i[category author]).order_by_created
   end
 end

@@ -10,7 +10,8 @@ class ArticlesController < ApplicationController
   end
 
   def favorites
-    @articles = Article.where(id: Vote.where(user_id: current_user.id).pluck(:article_id))
+    target_article_ids = Vote.includes(%i[user article]).where(user_id: current_user.id).pluck(:article_id)
+    @articles = Article.includes(%i[category author]).where(id: target_article_ids)
   end
 
   def show; end

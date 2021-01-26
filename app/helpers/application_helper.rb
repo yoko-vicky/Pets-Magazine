@@ -2,7 +2,7 @@ module ApplicationHelper
   def find_vote_id(article_id)
     return unless article_id
 
-    vote = Vote.where(user_id: current_user.id, article_id: article_id).first
+    vote = Vote.includes(%i[user article]).where(user_id: current_user.id, article_id: article_id).first
     return unless vote
 
     vote.id
@@ -11,7 +11,7 @@ module ApplicationHelper
   def votes_size(article_id)
     return unless article_id
 
-    Vote.where(article_id: article_id).size
+    Vote.includes(:article).where(article_id: article_id).size
   end
 
   def this_year
@@ -34,12 +34,5 @@ module ApplicationHelper
     return unless text
 
     sanitize(truncate(text, length: 100, omission: '...'))
-  end
-
-  def most_popular_article
-    return if Article.all.empty?
-
-    hash = Vote.includes(:article_id).group(:article_id).order(count_all: :desc).limit(1).count
-    hash.empty? ? Article.latest : Article.find(hash.to_a.flatten[0])
   end
 end

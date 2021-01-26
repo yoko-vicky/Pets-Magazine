@@ -11,7 +11,7 @@
 
 <h1><%= @user.name %>'s articles</h1>
 
-<% if @articles.any? %>
+<% if @articles.first %>
   <div class="articles">
     <%= render partial: "articles/article", collection: @articles %>
   </div>
