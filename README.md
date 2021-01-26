@@ -1,5 +1,5 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
-# Pets Mag
+# Pets Magazine
 ![Top Page Screenshot](./screenshot_1.png)
 ![My Favorites Page Screenshot](./screenshot_2.png)
 
