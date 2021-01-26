@@ -1114,9 +1114,6 @@ GEM
     bootsnap (1.5.1)
       msgpack (~> 1.0)
     builder (3.2.4)
-    bullet (6.1.3)
-      activesupport (>= 3.0.0)
-      uniform_notifier (~> 1.11)
     byebug (11.1.3)
     capybara (3.35.0)
       addressable
@@ -1165,15 +1162,13 @@ GEM
     mime-types-data (3.2020.1104)
     mimemagic (0.3.5)
     mini_mime (1.0.2)
-    mini_portile2 (2.5.0)
     minitest (5.14.3)
     msgpack (1.3.3)
     multi_json (1.15.0)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
     nio4r (2.5.4)
-    nokogiri (1.11.1)
-      mini_portile2 (~> 2.5.0)
+    nokogiri (1.11.1-x86_64-darwin)
       racc (~> 1.4)
     normalize-rails (8.0.1)
     oauth (0.5.5)
@@ -1303,7 +1298,6 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.7.0)
-    uniform_notifier (1.13.2)
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -1326,13 +1320,12 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
-  ruby
+  x86_64-darwin-20
 
 DEPENDENCIES
   aws-sdk (~> 3)
   aws-sdk-s3
   bootsnap (>= 1.4.4)
-  bullet
   byebug
   capybara (>= 3.26)
   font-awesome-sass (~> 5.15.1)
