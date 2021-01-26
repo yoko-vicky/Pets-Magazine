@@ -87,7 +87,7 @@ To get a local copy up and running follow these simple example steps.
 e.g. $ git clone https://github.com/yourUsername/yourProjectName 
 7. Press Enter. Your local copy will be created. 
 8. To install all dependencies and necessary gems, run `bundle installl`, `yarn install`
-9. Run `rails db:create`, then `rails db:migarate` * Remember to create table before migration
+9. Run `rails db:setup`
 10. Run `rails server` to run rails application in your local server
 11. Run `rspec` to run rspec tests
 
