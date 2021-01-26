@@ -8,6 +8,6 @@ module CategoriesHelper
   end
 
   def render_featured_area
-    most_popular_article ? "categories/featured" : "shared/notfound"
+    most_popular_article ? 'categories/featured' : 'shared/notfound'
   end
 end
