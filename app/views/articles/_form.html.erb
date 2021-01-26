@@ -15,9 +15,7 @@
   </div>
 
   <div class="field">
-    <% if @article.image.exists? %>
-      <%= image_tag @article.image.url(:thumb) %><br/>
-    <% end %>
+    <%= image_tag @article.image.url(:thumb) if @article.image.exists? %><br/>
     <%= f.label :image, "Attach a New Image" %><br />
     <%= f.file_field :image %>
   </div>
