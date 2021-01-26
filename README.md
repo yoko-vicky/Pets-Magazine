@@ -103,7 +103,7 @@ e.g. $ git clone https://github.com/yourUsername/yourProjectName
 ## Contributing
 
 Contributions, issues, and feature requests are welcome!
-Feel free to check the [issues page](../../issues).
+Feel free to check the [issues page](../../../issues).
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
