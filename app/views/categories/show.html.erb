@@ -1,4 +1,5 @@
 <h1><%= @category.name %></h1>
+
 <% if @articles.any? %>
   <div class="articles">
     <%= render partial: 'articles/article', collection: @articles %>

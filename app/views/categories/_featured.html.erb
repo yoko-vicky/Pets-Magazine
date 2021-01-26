@@ -1,4 +1,3 @@
-<% if most_popular_article %>
 <div class="featured">
   <figure class="featured__images">
     <%= image_tag most_popular_article_image(most_popular_article), class: "featured__image"  %>
@@ -15,6 +14,3 @@
     </div>
   </div>
 </div>
-<% else %>
-<%= render  "shared/notfound" %>
-<% end %>

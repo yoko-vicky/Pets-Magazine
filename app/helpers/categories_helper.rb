@@ -6,4 +6,8 @@ module CategoriesHelper
   def most_popular_article_image(most_popular_article)
     most_popular_article.image.exists? ? most_popular_article.image.url : 'no_img.jpg'
   end
+
+  def render_featured_area
+    most_popular_article ? "categories/featured" : "shared/notfound"
+  end
 end
