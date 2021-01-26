@@ -35,6 +35,10 @@ gem 'font-awesome-sass', '~> 5.15.1'
 gem 'paperclip'
 gem 'sorcery'
 
+# Add s3
+gem 'aws-sdk', '~> 3'
+gem "aws-sdk-s3", require: false
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
