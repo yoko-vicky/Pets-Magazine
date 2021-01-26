@@ -71,7 +71,7 @@ A list of commonly used resources that I find helpful is listed in the acknowled
 
 ## Live Demo
 
-[Live Demo Link](https://mv-pets-mag.herokuapp.com/)
+[Live Demo Link](https://yoco-pets-mag.herokuapp.com/)
 
 
 ## Getting Started

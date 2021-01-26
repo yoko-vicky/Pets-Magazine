@@ -4,7 +4,7 @@
       <% if category.articles.latest.image.exists? %>
         <%= image_tag category.articles.latest.image.url, class: "categories__image"  %>
       <% else %>
-        <%= image_tag 'no_img', class: "categories__image"  %>
+        <%= image_tag 'no_img.jpg', class: "categories__image"  %>
       <% end %>
     </div>
 
