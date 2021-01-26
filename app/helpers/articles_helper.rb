@@ -6,6 +6,4 @@ module ArticlesHelper
       'no_img.jpg'
     end
   end
-
-
 end
