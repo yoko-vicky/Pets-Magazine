@@ -7,7 +7,7 @@ class User < ApplicationRecord
                    uniqueness: true, format: { with: REGEX_FOR_NAME, message: msg }
 
   def already_voted?(article_id)
-    votes.find_by(article_id: article_id) ? true : false
+    votes.find_by(article_id: article_id)
   end
 
   def ordered_articles

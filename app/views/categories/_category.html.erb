@@ -1,11 +1,7 @@
 <% if category.articles.any? %>
   <div class="categories__item">
     <div class="categories__images">
-      <% if category.articles.latest.image.exists? %>
-        <%= image_tag category.articles.latest.image.url, class: "categories__image"  %>
-      <% else %>
-        <%= image_tag 'no_img.jpg', class: "categories__image"  %>
-      <% end %>
+      <%= image_tag category_articles_image(category), class: "categories__image"  %>
     </div>
 
     <div class="categories__texts">
