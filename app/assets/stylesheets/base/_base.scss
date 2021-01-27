@@ -102,6 +102,5 @@ textarea {
 
   @include mq(laptap) {
     margin: $head-pc-height auto 0;
-    min-height: 100vh;
   }
 }

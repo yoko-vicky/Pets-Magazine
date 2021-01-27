@@ -3,22 +3,13 @@
     <%= link_to root_path, class: "header__logo logo" do %>peTs sTyLe <%= icon('fas', 'paw') %><% end %>
     <nav class="header__nav">
       <ul class="header__nav__list">
-        <li class="header__nav__item"><%= link_to  "Home", root_path, class: current_page?(root_path) ? "header__nav__link active" : "header__nav__link" %></li>
-        <li class="header__nav__item"><%= link_to  "Write an article", new_article_path, class: current_page?(new_article_path) ? "header__nav__link active" : "header__nav__link" %></li>
-        <li class="header__nav__item"><%= link_to  "All Articles", articles_path, class: current_page?(articles_path) ? "header__nav__link active" : "header__nav__link" %></li>
-        <% if login? %>
-          <li class="header__nav__item"><%= link_to  "Create a category", new_category_path, class: current_page?(new_category_path) ? "header__nav__link active" : "header__nav__link" %></li>
-          <li class="header__nav__item"><%= link_to  "My favorites", my_favorites_path, class: current_page?(my_favorites_path) ? "header__nav__link active" : "header__nav__link" %></li>
-        <% end %>
+        <li class="header__nav__item"><%= link_to  "Home", root_path, class: header_home_class %></li>
+        <li class="header__nav__item"><%= link_to  "Write an article", new_article_path, class: header_new_article_class %></li>
+        <li class="header__nav__item"><%= link_to  "All Articles", articles_path, class: header_all_article_class %></li>
+        <%= header_menu_for_login_user %>
       </ul>
       <ul class="header__nav__list">
-        <% if login? && current_user %>
-          <li class="header__nav__item">Hi, <%= link_to current_user.name, user_path(current_user), class:"header__nav__username" %></li>
-          <li class="header__nav__item"><%= link_to  "Logout", logout_path, method: :delete, class: "header__nav__link" %></li>
-        <% else %>
-          <li class="header__nav__item"><%= link_to  "Register", signup_path, class: current_page?(signup_path) ? "header__nav__link active" : "header__nav__link" %></li>
-          <li class="header__nav__item"><%= link_to  "Login", login_path, class: current_page?(login_path) ? "header__nav__link active" : "header__nav__link" %></li>
-        <% end %>
+        <%= login_logout_menu  %>
       </ul>
     </nav>
     <%= link_to '#', class: "header__search" do %><%= icon('fas', 'search') %><% end %>
@@ -34,39 +25,22 @@
       <nav class="sidemenu__nav">
         <ul class="sidemenu__list upcase">
           <li class="sidemenu__item">
-            <%= link_to "Home", root_path, class: current_page?(root_path) ? "sidemenu__link active" : "sidemenu__link" %>
+            <%= link_to "Home", root_path, class: side_home_class %>
           </li>
           <li class="sidemenu__item">
-            <%= link_to "Write an Article", new_article_path, class: current_page?(new_article_path) ? "sidemenu__link active" : "sidemenu__link" %>
+            <%= link_to "Write an Article", new_article_path, class: side_new_article_class %>
           </li>
           <% if categories.any? %>
             <% categories.each do |category| %>
-              <li class="sidemenu__item"><%= link_to category.name, category_path(category), class: current_page?(category_path(category)) ? "sidemenu__link active" : "sidemenu__link" %></li>
+              <li class="sidemenu__item">
+              <%= link_to category.name, category_path(category), class: current_page?(category_path(category)) ? "sidemenu__link active" : "sidemenu__link" %>
+              </li>
             <% end %>
           <% end %>
-          <% if !login? %>
-            <li class="sidemenu__item">
-              <%= link_to "Login", login_path, class: current_page?(login_path) ? "sidemenu__link active" : "sidemenu__link" %>
-            </li>
-            <li class="sidemenu__item"><%= link_to "Register", signup_path, class: current_page?(signup_path) ? "sidemenu__link active" : "sidemenu__link" %></li>
-          <% end %>
+          <%#= side_category_menu(categories)  %>
+          <%= sidemenu_for_not_login_user  %>
         </ul>
       </nav>
-      <% if login? && current_user %>
-        <div class="sidemenu__info">
-          <%= image_tag("user.jpg", class: "sidemenu__avatar", alt:"username") %>
-          <div class="sidemenu__name">Hi, <%= current_user.name %></div>
-        </div>
-        <nav class="sidemenu__nav">
-          <ul class="sidemenu__list">
-            <li class="sidemenu__item"><%= link_to "Dashboard", '#', class: "sidemenu__link" %></li>
-            <li class="sidemenu__item"><%= link_to "Your favorites", my_favorites_path, class: "sidemenu__link" %></li>
-            <li class="sidemenu__item"><%= link_to "Replies", '#', class: "sidemenu__link" %></li>
-            <li class="sidemenu__item"><%= link_to "Account", user_path(current_user), class: current_page?(user_path(current_user)) ? "sidemenu__link active" : "sidemenu__link"%></li>
-            <li class="sidemenu__item"><%= link_to "Log out", logout_path, method: :delete, class: "sidemenu__link"%></li>
-          </ul>
-        </nav>
-      <% end %>
+      <%= sidemenu_for_login_user  %>
     </div>
-
 </header>
