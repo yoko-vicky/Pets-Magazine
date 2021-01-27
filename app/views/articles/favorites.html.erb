@@ -1,9 +1,2 @@
 <h1>My favorites' articles</h1>
-
-<% if @articles.any? %>
-  <div class="articles">
-    <%= render @articles %>
-  </div>
-<% else %>
-  <%= render  "shared/notfound" %>
-<% end %>
+<%= my_favorites_articles(@articles) %>

@@ -2,12 +2,10 @@
   <div class="footer__container">
     <%= link_to root_path, class: "footer__logo logo" do %>peTs sTyLe <%= icon('fas', 'paw') %><% end %>
     <div class="footer__content">
-      <% if categories.any? %>
-        <ul class="footer__list">
-            <li class="footer__item"><%= link_to "Privacy Policy", '#', class: "footer__link" %></li>
-            <li class="footer__item"><%= link_to "Terms & Conditions", '#', class: "footer__link" %></li>
-        </ul>
-      <% end %>
+      <ul class="footer__list">
+          <li class="footer__item"><%= link_to "Privacy Policy", '#', class: "footer__link" %></li>
+          <li class="footer__item"><%= link_to "Terms & Conditions", '#', class: "footer__link" %></li>
+      </ul>
       <div class="footer__copy">Copyright <%= this_year %>. All rights reserved.</div>
     </div>
     <div class="footer__sns">

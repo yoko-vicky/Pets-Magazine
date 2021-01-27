@@ -1,5 +1,5 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
-# Pets Mag
+# Pets Magazine
 ![Top Page Screenshot](./screenshot_1.png)
 ![My Favorites Page Screenshot](./screenshot_2.png)
 
@@ -87,7 +87,7 @@ To get a local copy up and running follow these simple example steps.
 e.g. $ git clone https://github.com/yourUsername/yourProjectName 
 7. Press Enter. Your local copy will be created. 
 8. To install all dependencies and necessary gems, run `bundle installl`, `yarn install`
-9. Run `rails db:create`, then `rails db:migarate` * Remember to create table before migration
+9. Run `rails db:setup`
 10. Run `rails server` to run rails application in your local server
 11. Run `rspec` to run rspec tests
 
@@ -103,7 +103,7 @@ e.g. $ git clone https://github.com/yourUsername/yourProjectName
 ## Contributing
 
 Contributions, issues, and feature requests are welcome!
-Feel free to check the [issues page](../../issues).
+Feel free to check the [issues page](../../../issues).
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)

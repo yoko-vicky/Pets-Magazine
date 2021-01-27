@@ -1,6 +1,2 @@
-<%= render "categories/featured" %>
-<% if @categories.any? %>
-  <div class="categories">
-    <%= render @categories %>
-  </div>
-<% end %>
+<%= render_featured_area(@most_popular_article) %>
+<%= all_categories(@categories)  %>

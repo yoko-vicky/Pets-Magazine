@@ -6,11 +6,12 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.order_by_created.latest16
+    @articles = Article.includes(:votes).order_by_created.latest16
   end
 
   def favorites
-    @articles = Article.where(id: Vote.where(user_id: current_user.id).pluck(:article_id))
+    target_article_ids = Vote.where(user_id: current_user.id).pluck(:article_id)
+    @articles = Article.includes(:votes).where(id: target_article_ids)
   end
 
   def show; end

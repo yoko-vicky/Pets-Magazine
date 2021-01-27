@@ -3,11 +3,12 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show]
 
   def index
-    @categories = Category.prioritize
+    @categories = Category.includes(:articles).prioritize
+    @most_popular_article = most_popular_article
   end
 
   def show
-    @articles = @category.articles.order_by_created
+    @articles = @category.articles.includes(:votes).order_by_created
   end
 
   def new
@@ -32,5 +33,16 @@ class CategoriesController < ApplicationController
 
   def set_category
     @category = Category.find(params[:id])
+  end
+
+  def most_popular_article
+    return if Article.first.nil?
+
+    hash = Vote.group(:article_id).order(count_all: :desc).limit(1).count
+    if hash.empty?
+      Article.latest
+    else
+      Article.find(hash.to_a.flatten[0])
+    end
   end
 end

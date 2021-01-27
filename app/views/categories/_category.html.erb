@@ -1,16 +1,1 @@
-<% if category.articles.any? %>
-  <div class="categories__item">
-    <div class="categories__images">
-      <% if category.articles.latest.image.exists? %>
-        <%= image_tag category.articles.latest.image.url, class: "categories__image"  %>
-      <% else %>
-        <%= image_tag 'no_img.jpg', class: "categories__image"  %>
-      <% end %>
-    </div>
-
-    <div class="categories__texts">
-      <h2 class="categories__title"><span><%= link_to category.name, category_path(category) %></span></h2>
-      <h3 class="categories__subtitle"><%= link_to category.articles.latest.title, article_path(category.articles.latest) %></h3>
-    </div>
-  </div>
-<% end %>
+<%= single_category_view(category) %>

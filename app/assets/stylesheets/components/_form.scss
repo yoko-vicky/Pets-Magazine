@@ -46,6 +46,11 @@ input[type="submit"] {
   &:not(:last-child) {
     margin-bottom: 1rem;
   }
+
+  &__thumb {
+    margin-bottom: 2rem;
+    display: block;
+  }
 }
 
 // CHECKBOX STYLE
