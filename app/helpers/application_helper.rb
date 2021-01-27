@@ -163,9 +163,9 @@ module ApplicationHelper
 
     content_tag(:ul, class: 'errors') do
       obj.errors.full_messages.each do |msg|
-        content_tag(:li, class: 'errors__item') do
+        concat(content_tag(:li, class: 'errors__item') do
           msg
-        end
+        end)
       end
     end
   end
