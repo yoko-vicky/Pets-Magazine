@@ -11,6 +11,6 @@ class User < ApplicationRecord
   end
 
   def ordered_articles
-    articles.order_by_created
+    articles.includes(:votes).order_by_created
   end
 end

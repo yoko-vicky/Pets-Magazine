@@ -3,12 +3,12 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show]
 
   def index
-    @categories = Category.prioritize
+    @categories = Category.includes(:articles).prioritize
     @most_popular_article = most_popular_article
   end
 
   def show
-    @articles = @category.articles.order_by_created
+    @articles = @category.articles.includes(:votes).order_by_created
   end
 
   def new

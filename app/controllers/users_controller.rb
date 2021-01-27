@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.includes(%i[articles votes])
   end
 
   def show
