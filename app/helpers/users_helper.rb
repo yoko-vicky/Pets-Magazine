@@ -16,7 +16,8 @@ module UsersHelper
           link_to('My favorites', my_favorites_path, class: 'btn btn-standout') +
             link_to('Edit Name', edit_user_path(user), class: 'btn btn-info') +
             link_to('Delete My Account', user_path(user), method: :delete,
-                                                          data: { confirm: 'Are you sure to delete this user?' }, class: 'btn btn-danger')
+                                                          data: { confirm: 'Are you sure to delete this user?' },
+                                                          class: 'btn btn-danger')
         end
     end
   end

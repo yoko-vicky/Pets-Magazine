@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/ModuleLength
 module ApplicationHelper
   def find_vote_id(article_id)
     return unless article_id
@@ -169,3 +170,4 @@ module ApplicationHelper
     end
   end
 end
+# rubocop:enable Metrics/ModuleLength
