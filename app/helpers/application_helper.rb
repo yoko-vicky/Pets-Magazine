@@ -3,7 +3,7 @@ module ApplicationHelper
   def find_vote_id(article_id)
     return unless article_id
 
-    vote = Vote.includes(%i[user article]).where(user_id: current_user.id, article_id: article_id).first
+    vote = Vote.where(user_id: current_user.id, article_id: article_id).first
     return unless vote
 
     vote.id
@@ -12,7 +12,7 @@ module ApplicationHelper
   def votes_size(article_id)
     return unless article_id
 
-    Vote.includes(:article).where(article_id: article_id).size
+    Vote.where(article_id: article_id).size
   end
 
   def this_year
