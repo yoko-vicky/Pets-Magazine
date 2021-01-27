@@ -30,14 +30,8 @@
           <li class="sidemenu__item">
             <%= link_to "Write an Article", new_article_path, class: side_new_article_class %>
           </li>
-          <% if categories.any? %>
-            <% categories.each do |category| %>
-              <li class="sidemenu__item">
-              <%= link_to category.name, category_path(category), class: current_page?(category_path(category)) ? "sidemenu__link active" : "sidemenu__link" %>
-              </li>
-            <% end %>
-          <% end %>
-          <%#= side_category_menu %>
+
+          <%= side_category_menu %>
           <%= sidemenu_for_not_login_user  %>
         </ul>
       </nav>
