@@ -85,17 +85,6 @@ RSpec.describe ApplicationHelper, type: :helper do
       expect { excerpt_short }.to raise_error(ArgumentError)
     end
   end
-
-  describe '#most_popular_article' do
-    it 'returns single most popupular article object' do
-      expect(most_popular_article.votes.size).to be >= 0
-    end
-
-    it 'returns nil if there is no article' do
-      Article.destroy_all
-      expect(most_popular_article).to eq nil
-    end
-  end
 end
 
 # rubocop:enable Layout/LineLength
