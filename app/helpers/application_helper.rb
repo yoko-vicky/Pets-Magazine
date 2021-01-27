@@ -97,13 +97,22 @@ module ApplicationHelper
     current_page?(new_article_path) ? 'sidemenu__link active' : 'sidemenu__link'
   end
 
-  def side_category_menu(categories)
+  # def side_category_menu(categories)
+  #   return if categories.all.empty?
+
+  #   categories.to_a.collect do |category|
+  #     content_tag(:li, category.name.html_safe, class: 'sidemenu__item')
+  #     # link_to(category.name, category_path(category), class: 'sidemenu__link')
+  #   end
+  # end
+
+  def side_category_menu
     return unless categories.any?
 
-    categories.each do |category|
+    categories.to_a.each do |category|
       content_tag(:li, class: 'sidemenu__item') do
         link_to(category.name, category_path(category),
-                class: 'sidemenu__link')
+                class: current_page?(category_path(category)) ? 'sidemenu__link active' : 'sidemenu__link')
       end
     end
   end
