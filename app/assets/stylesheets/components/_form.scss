@@ -4,6 +4,8 @@
 form {
   @include content_width;
 
+  margin: 0 auto 6rem;
+
   .btn {
     margin: 1rem auto;
   }

@@ -173,13 +173,14 @@
   width: 100%;
   max-width: 60rem;
   background-color: $brown;
-  padding: 3rem 1rem;
+  padding: 2rem 1rem;
   position: fixed;
   box-shadow: 0 3px 12px rgba($black, 0.3);
   transition: all 0.6s;
   transform: translateX(-100rem);
   z-index: 10;
   top: $head-mob-height;
+  overflow-y: scroll;
 
   &.open {
     transform: translateX(0);

@@ -24,7 +24,7 @@ This web app includes the following features:
   * A form with all necessary fields is displayed
 
 
-Plus, I added some features that are not required:
+Plus, I added some useful features:
 - All articles view which is showing all articles
 - Create a category form that logged in user can create a new category
 - My favorites view that shows all articles that the current user voted
