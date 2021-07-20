@@ -44,8 +44,6 @@ Also, I followed guidelines as below:
 - Use Postgres as a database
 - MVP of the full product (with the full graphical design but only basic features that can be easily extended in the future)
 
-The video description for this project is [here](https://youtu.be/BkQgvo3dxWE).
-
 A list of commonly used resources that I find helpful is listed in the acknowledgments.
 
 ## Table of Contents
